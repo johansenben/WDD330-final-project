@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 330 - Week 4 - project plan - Ben Johansen</title>
+    <style>
+        .color-box {
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid #000;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>WDD330 – week 4 - project plan – Ben Johansen</h1>
+    <h2>Temperature checker</h2>
+    
+    <h3>Overview:</h3>
+    <p>Prompts the user for a longitude and latitude, then displays the nearest town/city and its current temperature.  It also has the option to use the user’s current location, which can be found using the IP Geolocation API from geoapify. I use a weather app on my phone and the feature to see the current temperature in my area is one of the features that I use the most.</p>
+    
+    <h3>Target Audience:</h3>
+    <p>Anyone who needs to know what the current temperature is</p>
+    
+    <h3>Major Functions:</h3>
+    <ul>
+        <li>
+            <h4>getLocationFromIP</h4>
+            <p>uses the IP geolocation API to get the longitude and latitude from the user’s IP address</p>
+        </li>
+        <li>
+            <h4>getCityFormLocation</h4>
+            <p>uses the longitude and latitude to get the nearest town/city</p>
+        </li>
+        <li>
+            <h4>getLocationFromAddress</h4>
+            <p>uses the address to get the longitude and latitude</p>
+        </li>
+        <li>
+            <h4>getWeatherData</h4>
+            <p>gets the weather data for the longitude and latitude</p>
+        </li>
+        <li>
+            <h4>getData</h4>
+            <p>gets the data from an API and handles errors</p>
+        </li>
+        <li>
+            <h4>displayData</h4>
+            <p>displays the nearest town/city and the current temperature</p>
+        </li>
+        <li>
+            <h4>handleGetWeatherBtn</h4>
+            <p>gets called when the getWeather button is clicked. It calls the functions to find the nearest town/city  and weather info and display it</p>
+        </li>
+        <li>
+            <h4>alert</h4>
+            <p>creates an alert at the top of the screen. It will mostly be used to let the user know if there was an error with getting the API data.</p>
+        </li>
+    </ul>
+
+    <h3>Wireframes:</h3>
+    <h4>Small Wireframe</h4>
+    <img src="small-wireframe.png" alt="Small Wireframe">
+    <h4>Large Wireframe</h4>
+    <img src="large-wireframe.png" alt="Large Wireframe">
+
+    <h3>External Data:</h3>
+    <ul>
+        <li>
+            <h4><a href="https://www.weatherapi.com/docs#apis-forecast">Forcast API</a></h4>
+            <pre>
+{
+    maxTemp_c,
+    minTemp_c,
+    avgTemp_c,
+    maxTemp_f,
+    minTemp_f,
+    avgTemp_f,
+    maxWind_mph,
+    maxWind_kph
+}
+            </pre>
+        </li>
+        <li>
+            <h4><a href="https://apidocs.geoapify.com/docs/ip-geolocation/">IP Geolocation API</a></h4>
+            <pre>
+{
+    city: {
+        name
+    },
+    country: {
+        name,
+        iso_code
+    },
+    continent: {
+        name
+    },
+    state: {
+        name
+    },
+    location: {
+        longitude,
+        latitude
+    }
+}
+            </pre>
+        </li>
+        <li>
+            <h4><a href="https://apidocs.geoapify.com/docs/places/">Places API</a></h4>
+            <pre>
+{
+    name,
+    country,
+    state,
+    city
+}
+            </pre>
+        </li>
+    </ul>
+
+    <h3>Module List</h3>
+    <ul>
+        <li>
+            <h4>index.js</h4>
+            <p>handles the javascript related to the home page</p>
+        </li>
+        <li>
+            <h3>locationAPI.js</h3>
+            <p>handles data retrieval from the geoapify API</p>
+        </li>
+        <li>
+            <h3>weatherAPI.js</h3>
+            <p>handles data retrieval from the weather API</p>
+        </li>
+    </ul>
+
+    <h3>Graphic Identity:</h3>
+    <h4>Colors</h4>
+    <ul>
+        <li>
+            <p>backgrounds</p>
+            <div class="color-box" style="background-color:#eee"></div>
+        </li>
+        <li>
+            <p>headers</p>
+            <div class="color-box" style="background-color: #555"></div>
+        </li>
+        <li>
+            <p>backgrounds and accents</p>
+            <div class="color-box" style="background-color: #57a"></div>
+        </li>
+    </ul>
+    <h4>Fonts</h4>
+    <p style="font-family: 'Open Sans', sans-serif">Open Sans</p>
+
+    <h3>Timeline & Project Planning:</h3>
+    <p>The trello board has 1 list for each week. I will hopefully be finished before week 7. I'm planning to do more than half of the work in week 5, so I don't have to worry about it as much in week 6.</p>
+    <a href="https://trello.com/b/YxhE2NcZ/wdd330-final-project">Trello Board</a>
+
+    <h3>Challenges:</h3>
+    <ul>
+        <li>
+            <p>Making sure that I follow my schedule and don't procrastinate</p>
+        </li>
+        <li>
+            <p>Formatting the address that the user inputs in a way that the API can read it</p>
+        </li>
+    </ul>
+</body>
+</html>
