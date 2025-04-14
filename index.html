@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD330 Final Project - Ben Johansen</title>
+    <title>WDD330 Final Project - Ben Johansen - Weather Finder</title>
 
     <script type="module" src="js/index.js" defer></script>
 </head>
 <body>
-    <h1>nothing to display yet; html/css are planned for week 6</h1>
+    <h1>Weather Finder</h1>
+    <form id="get-weather-form">
+        <label>Use My Current Location: <input type="checkbox" name="use-my-location" id="use-my-location"></label>
+        OR
+        <label>Longitude: <input type="number" step="any" name="longitude" id="longitude" required></label>
+        <label>Longitude: <input type="number" step="any" name="latitude" id="latitude" required></label>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather-data"></div>
 </body>
 </html>
