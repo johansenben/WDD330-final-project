@@ -4,7 +4,7 @@ const locationApiKey = import.meta.env.VITE_locationApiKey;
 const weatherApiKey = import.meta.env.VITE_weatherApiKey;
 
 const IPGeolocationRoute = `https://api.geoapify.com/v1/ipinfo?apiKey=${locationApiKey}`;
-const getPlacesRoute = (lon, lat) => `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${lat},${lon}`;
+const getPlacesRoute = (lon, lat) => `https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${lat},${lon}`;
 
 export const getLocationFromIP = async () => {
     return getData(IPGeolocationRoute)
