@@ -6,15 +6,17 @@
     <title>WDD330 Final Project - Ben Johansen - Weather Finder</title>
 
     <script type="module" src="/src/js/index.js" defer></script>
+    <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body>
     <h1>Weather Finder</h1>
+    <ul id="alerts" class="hidden"></ul>
     <form id="get-weather-form">
-        <label>Use My Current Location: <input type="checkbox" name="use-my-location" id="use-my-location"></label>
+        <label>Use My Current Location: <input type="checkbox" name="use-my-location" id="use-my-location"><div class="custom-checkbox"></div></label>
         OR
         <label>Longitude: <input type="number" step="any" name="longitude" id="longitude" required></label>
         <label>Latitude: <input type="number" step="any" name="latitude" id="latitude" required></label>
-        <button type="submit">Get Weather</button>
+        <button type="submit" id="get-weather-btn">Get Weather</button>
     </form>
     <div id="weather-data"></div>
 </body>

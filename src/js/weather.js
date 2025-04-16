@@ -1,4 +1,5 @@
 import { getData } from "./api.js";
+import { addAlert } from "./util.js";
 
 const weatherApiKey = import.meta.env.VITE_weatherApiKey;
 
@@ -8,6 +9,7 @@ export const getWeatherData = async (longitude, latitude) => {
     return getData(getWeatherRoute(longitude, latitude))
         .then(res => res.json())
         .catch(error => {
-            console.error(error)
+            addAlert(error, "error");
+            console.error(error);
         });
 }

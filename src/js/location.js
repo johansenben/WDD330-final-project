@@ -1,4 +1,5 @@
 import { getData } from "./api.js";
+import { addAlert } from "./util.js";
 
 const locationApiKey = import.meta.env.VITE_locationApiKey;
 const weatherApiKey = import.meta.env.VITE_weatherApiKey;
@@ -11,12 +12,12 @@ export const getLocationFromIP = async () => {
         .then(res => res.json())
         .then(json => json.location)
         .catch(error => {
-            console.error(error)
+            addAlert(error, "error");
+            console.error(error);
         });
 }
 
 export const getCityFromLocation = async (longitude, latitide) => {
-    //route doesn't work; it thinks the nearest city to Lethbridge, AB is in Montana
     return getData(getPlacesRoute(longitude, latitide))
         .then(res => res.json())
         .then(json => json.location)
@@ -26,6 +27,7 @@ export const getCityFromLocation = async (longitude, latitide) => {
             return `${location.name}, ${location.region}, ${location.country}`;
         })
         .catch(error => {
-            console.error(error)
+            addAlert(error, "error");
+            console.error(error);
         });
 }
